@@ -45,7 +45,7 @@ def get_notes(songs='all'):
     ite = 0
 
     for file in glob.glob(directory + "/*.mid"):
-        if ite < 10:
+        #if ite < 10:
             midi = converter.parse(file)
 
             print("Parsing %s" % file)
@@ -63,7 +63,7 @@ def get_notes(songs='all'):
                     notes.append(str(element.pitch) + ' ' + str(element.quarterLength))
                 elif isinstance(element, chord.Chord):
                     notes.append('.'.join(str(n) for n in element.normalOrder) + ' ' + str(element.quarterLength))
-        ite += 1
+        #ite += 1
         
 
     with open('notes', 'wb') as filepath:
