@@ -70,7 +70,6 @@ class Train():
                     notes.append(str(element.pitch) + ' ' + str(element.quarterLength))
                 elif isinstance(element, chord.Chord):
                     notes.append('.'.join(str(n) for n in element.normalOrder) + ' ' + str(element.quarterLength))
-            break
             
         if len(notes) == 0:
             raise ValueError("No Midi files were found in {} directory".format(self.directory))
